@@ -21,6 +21,11 @@ The repository is organized to support:
 
 ## 🔌 Hardware Pinout & Wiring
 
+PINS TO ATTACH NRF24L01 TO ESP32
+FOR DUAL/TWO NRF24L01
+ HSPI= SCK = 14, MISO = 12, MOSI = 13, CS = 15 , CE = 16
+ VSPI= SCK = 18, MISO =19, MOSI = 23 ,CS =21 ,CE = 22
+
 Connect your **Ai-Thinker BW16 (RTL8720DN)** to the **ST7735 SPI TFT Display** and **3 Tactile Navigation Buttons**:
 
 ### 1. ST7735 128x160 SPI Display
