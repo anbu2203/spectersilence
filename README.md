@@ -3,6 +3,8 @@
 This repository documents a prototype dual-module wireless testing platform built around an ESP32-based control board and a BW16 (RTL8720DN) module. The build shown in the included images is intended for lab-only, authorized experimentation on equipment you own or explicitly control.
 
 > Important: Use only in a legal, authorized, and strictly controlled environment. Do not test against third-party networks, public infrastructure, or any system you do not own or have explicit written permission to evaluate.
+> <img width="3264" height="1836" alt="WIN_20261113_18_32_55_Pro" src="https://github.com/user-attachments/assets/58e84a0b-d190-495f-9376-16ef01883498" />
+<img width="3264" height="1836" alt="WIN_20261113_18_32_41_Pro" src="https://github.com/user-attachments/assets/f20d90d7-c0ce-48cc-a930-274c6d570ae4" />
 
 ## Project overview
 
