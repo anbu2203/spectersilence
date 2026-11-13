@@ -19,31 +19,47 @@ The repository is organized to support:
 - image references for the assembled build
 - safety and compliance notes
 
-## Repository structure
+## 🔌 Hardware Pinout & Wiring
 
-```text
-.
-├── README.md
-├── docs/
-│   ├── hardware-setup.md
-│   ├── wiring-guide.md
-│   └── safety-and-legal.md
-├── firmware/
-│   ├── README.md
-│   ├── bw16/
-│   │   └── firmware.bin
-│   ├── esp32/
-│   │   └── firmware.bin
-│   └── flash/
-│       └── manifest.json
-├── images/
-│   ├── image-1.jpg
-│   ├── image-2.jpg
-│   ├── image-3.jpg
-├── schema/
-│   └── pinout-notes.txt
-└── LICENSE
-```
+Connect your **Ai-Thinker BW16 (RTL8720DN)** to the **ST7735 SPI TFT Display** and **3 Tactile Navigation Buttons**:
+
+### 1. ST7735 128x160 SPI Display
+| ST7735 Signal | BW16 Pin | Description |
+|---|---|---|
+| **CS** | `PA27` | SPI Chip Select |
+| **DC** | `PA25` | Data / Command Control |
+| **RST** | `PA26` | Display Reset |
+| **SCLK** | `PA14` | SPI Clock |
+| **MOSI** | `PA12` | SPI Data Input |
+| **BLK** | `PA30` | Backlight (3.3V) |
+| **VCC** | `3.3V` | Power (3.3V Power Rail) |
+| **GND** | `GND` | Ground |
+
+### 2. Navigation Buttons (Active LOW)
+| Button | BW16 Pin | Action |
+|---|---|---|
+| **UP** | `PB1` | Move Selection UP |
+| **OK / SELECT** | `PB3` | Short Press: Select / Toggle<br>**Long Press (Hold): Return to Menu / Abort** |
+| **DOWN** | `PB2` | Move Selection DOWN |
+
+> 💡 **Note:** Connect one pin of each button switch to the corresponding BW16 GPIO pin, and the opposite pin to **GND** (internal `INPUT_PULLUP` enabled).
+
+---
+
+## ⚡ Web Serial Flasher
+
+You can flash BW16 Specter directly from your browser (**Chrome**, **Edge**, or **Opera**) without installing Arduino IDE or USB drivers!
+
+### Step 1: Put BW16 in Download Mode
+1. Press and **hold** the **BURN** button on the BW16 module.
+2. Press and **release** the **RST** button.
+3. Release the **BURN** button — the module is now in UART Download Mode.
+
+### Step 2: Flash
+1. Open `index.html from wifi deauther
+2. Click **Connect Serial Device** and select your USB COM port.
+3. Click **Flash Firmware to BW16**.
+
 
 ## Components used
 
@@ -128,21 +144,7 @@ The following is a safe, high-level summary for firmware installation in a lab e
 - Do not connect to unknown networks or devices
 - Confirm the build is stable before field use
 
-## Firmware folder
 
-Place all binary files in the `firmware/` directory before flashing. Example:
-
-```text
-firmware/
-├── README.md
-├── bw16/
-│   └── bw16-firmware.bin
-├── esp32/
-│   └── esp32-firmware.bin
-├── flash/
-│   └── manifest.json
-└── release-notes.txt
-```
 
 ## Hardware build notes
 
